@@ -87,6 +87,28 @@ services:
       WEB_CONCURRENCY: 1
       WEB_MEMORY: 256
 
+  api-microservices:
+    image: nossas/bonde-graphql:develop
+    # build:
+    #   context: ./../bonde-graphql/
+    #   dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - "3002:3002"
+    command: npm run dev
+    links:
+      - postgres:db.devel
+    environment:
+      PORT: 3002
+      SCHEMA_NAME: microservices
+      DATABASE_URL: postgres://postgres:3x4mpl3@db.devel:5432/bonde
+      JWT_TYPE: microservices.jwt_token
+      JWT_SECRET: d41d8cd98f00b204e9800998ecf8427e
+      PG_DEFAULT_ROLE: anonymous
+      WEB_CONCURRENCY: 1
+      WEB_MEMORY: 256
+
   # bot:
   #   image: nossas/bonde-bot:develop
   #   # build:
