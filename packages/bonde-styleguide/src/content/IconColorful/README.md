@@ -16,3 +16,11 @@
   <IconColorful name='video' />
 </div>
 ```
+
+
+### IconColorful - `inverted`
+
+
+```js { "props": { "className": "dark" } }
+<IconColorful name='bonde' size={100} inverted />
+```
