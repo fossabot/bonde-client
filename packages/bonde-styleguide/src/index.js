@@ -51,3 +51,5 @@ export { default as ProgressRankingItem } from './progress/ProgressRankingItem/P
 export { default as Tab } from './navigation/Tab/Tab'
 export { default as TabItem } from './navigation/TabItem/TabItem'
 
+export { default as Input } from './form/Input/Input'
+export { default as ControlLabel } from './form/ControlLabel/ControlLabel'
