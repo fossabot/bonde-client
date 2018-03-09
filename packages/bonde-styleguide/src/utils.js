@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 export const px = (value, defaultValue) => {
   if (value && typeof value === 'number') return `${value}px`
   else if (value && typeof value === 'string') return value
-  else if (!value && defaultValue) return `${defaultValue}px`
+  else if (!value && typeof defaultValue === 'number') return `${defaultValue}px`
+  else if (!value && typeof defaultValue === 'string') return defaultValue
   else return 0
 }
 
