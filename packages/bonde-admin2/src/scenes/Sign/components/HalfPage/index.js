@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flexbox, Image, Title } from 'bonde-styleguide'
+import { Flexbox, IconColorful, Image, Text } from 'bonde-styleguide'
 import styled from 'styled-components'
 
 const FixedLayout = styled.div`{
@@ -15,21 +15,26 @@ const HalfPage = ({ children }) => (
   <FixedLayout>
     <Flexbox row>
       <Image
-        src='https://cdn-images-1.medium.com/max/1600/1*YZKhuSB_eF4LyCTNOFIckA.jpeg'
+        src='https://hdwallpaper20.com/wp-content/uploads/2017/08/Anonymous-Why-We-Protest-Anonymous-Activism-Forum-wallpaper-wp2002390.jpg'
         width='50%'
         height='100%'
       >
-        <Flexbox fullSize row padding={{ x: 142 }} alignItems='middle'>
-          <Title.H2 color='#fff'>
-            Quer mobilizar pessoas por uma causa?<br />
-            Cola aí, pode entrar.<br />
-            O BONDE te leva lá.
-          </Title.H2>
+        <Flexbox fullSize row padding={{ x: '20.6%' }} alignItems='middle'>
+          <Flexbox>
+            <IconColorful name='bonde' size={200} inverted />
+            <Text fontSize={36} fontWeight={900} lineHeight={1.28} color='#fff'>
+              Quer mobilizar pessoas por uma causa?<br />
+              Cola aí, pode entrar.<br />
+              O BONDE te leva lá.
+            </Text>
+          </Flexbox>
         </Flexbox>
       </Image>
-      <Flexbox>
-        {children}
-      </Flexbox> 
+      <Flexbox fullSize row alignItems='middle'>
+        <Flexbox padding={{ x: '20.6%' }}>
+          {children}
+        </Flexbox>
+      </Flexbox>
     </Flexbox> 
   </FixedLayout>
 )
