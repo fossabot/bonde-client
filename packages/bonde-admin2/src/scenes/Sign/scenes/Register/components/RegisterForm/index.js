@@ -4,7 +4,8 @@ import {
   Input,
   Button,
   Grid,
-  Cell
+  Cell,
+  Flexbox
 } from 'bonde-styleguide'
 import FormField from 'components/FormField'
 
@@ -53,7 +54,9 @@ const RegisterForm = ({ handleSubmit }) => (
         />
       </Cell> 
     </Grid>
-    <Button type='submit'>Confirmar</Button>
+    <Flexbox padding={{ top: 43 }} alignItems='end'>
+      <Button type='submit'>Confirmar</Button>
+    </Flexbox>
   </form>
 )
 
