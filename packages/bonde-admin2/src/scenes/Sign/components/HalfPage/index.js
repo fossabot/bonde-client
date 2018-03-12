@@ -11,14 +11,16 @@ const FixedLayout = styled.div`{
   display: flex;
 }`
 
+const FlexboxDivideEqually = styled.div`{
+  display: flex;
+
+  & > * { flex: 1 1 0 }
+}`
+
 const HalfPage = ({ children }) => (
   <FixedLayout>
-    <Flexbox row>
-      <Image
-        src='https://hdwallpaper20.com/wp-content/uploads/2017/08/Anonymous-Why-We-Protest-Anonymous-Activism-Forum-wallpaper-wp2002390.jpg'
-        width='50%'
-        height='100%'
-      >
+    <FlexboxDivideEqually row>
+      <Image src='https://goo.gl/q9PTsW' height='100%'>
         <Flexbox fullSize row padding={{ x: '20.6%' }} alignItems='middle'>
           <Flexbox>
             <IconColorful name='bonde' size={200} inverted />
@@ -35,7 +37,7 @@ const HalfPage = ({ children }) => (
           {children}
         </Flexbox>
       </Flexbox>
-    </Flexbox> 
+    </FlexboxDivideEqually>
   </FixedLayout>
 )
 
