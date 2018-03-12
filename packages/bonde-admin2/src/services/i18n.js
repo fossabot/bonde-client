@@ -1,9 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { IntlProvider, injectIntl } from 'react-intl'
-import store from '../store'
 
-export default ({ messages }) => (Component) => (props) => {
-  const locale = store.getState().currentLocale
+export default ({ messages }) => (Component) => connect(
+  (state) => ({
+    locale: state.currentLocale
+  })
+)(({ locale, ...props }) => {
   const IntlComponent = injectIntl(Component)
   
   return (
@@ -11,4 +14,4 @@ export default ({ messages }) => (Component) => (props) => {
       <IntlComponent {...props} />
     </IntlProvider>
   )
-}
+})
