@@ -8,17 +8,24 @@ import {
   Flexbox
 } from 'bonde-styleguide'
 import FormField from 'components/FormField'
+import i18n from 'services/i18n'
 
 
-const RegisterForm = ({ handleSubmit }) => (
+const RegisterForm = ({ handleSubmit, intl }) => (
   <form onSubmit={handleSubmit}>
     <Grid>
       <Cell size={[6]}>
         <Field
           name='firstName'  
           type='text'
-          label='Nome'
-          placeholder='Seu nome'
+          label={intl.formatMessage({
+            id: 'scenes.sign.registerForm.label.name',
+            defaultMessage: 'Nome'
+          })}
+          placeholder={intl.formatMessage({
+            id: 'scenes.sign.registerForm.placeholder.name',
+            defaultMessage: 'Seu nome'
+          })}
           component={FormField}
           renderField={Input}
         />
@@ -27,8 +34,14 @@ const RegisterForm = ({ handleSubmit }) => (
         <Field
           name='lastName'  
           type='text'
-          label='Sobrenome'
-          placeholder='Seu sobrenome'
+          label={intl.formatMessage({
+            id: 'scenes.sign.registerForm.label.lastName',
+            defaultMessage: 'Sobrenome'
+          })}
+          placeholder={intl.formatMessage({
+            id: 'scenes.sign.registerForm.placeholder.lastName',
+            defaultMessage: 'Seu sobrenome'
+          })}
           component={FormField}
           renderField={Input}
         />
@@ -37,8 +50,14 @@ const RegisterForm = ({ handleSubmit }) => (
         <Field
           name='email'  
           type='text'
-          label='Email'
-          placeholder='exemplo@email.com'
+          label={intl.formatMessage({
+            id: 'scenes.sign.registerForm.label.email',
+            defaultMessage: 'Email'
+          })}
+          placeholder={intl.formatMessage({
+            id: 'scenes.sign.registerForm.placeholder.email',
+            defaultMessage: 'exemplo@email.com'
+          })}
           component={FormField}
           renderField={Input}
         />
@@ -47,19 +66,30 @@ const RegisterForm = ({ handleSubmit }) => (
         <Field
           name='password' 
           type='password'
-          label='Senha'
-          placeholder='Sua senha'
+          label={intl.formatMessage({
+            id: 'scenes.sign.registerForm.label.password',
+            defaultMessage: 'Senha'
+          })}
+          placeholder={intl.formatMessage({
+            id: 'scenes.sign.registerForm.placeholder.password',
+            defaultMessage: 'Sua senha'
+          })}
           component={FormField}
           renderField={Input}
         />
       </Cell> 
     </Grid>
     <Flexbox padding={{ top: 43 }} alignItems='end'>
-      <Button type='submit'>Confirmar</Button>
+      <Button type='submit'>
+        {intl.formatMessage({
+          id: 'scenes.sign.registerForm.submit',
+          defaultMessage: 'Confirmar'
+        })}
+      </Button>
     </Flexbox>
   </form>
 )
 
-export default reduxForm({
+export default i18n({ messages: require('./locale').default })(reduxForm({
   form: 'registerForm'
-})(RegisterForm)
+})(RegisterForm))
