@@ -21,11 +21,11 @@ Image.propTypes = {
   /** The URL of the image. */
   src: string.isRequired,
   /** The height of the image. */
-  height: oneOfType(number, string).isRequired,
+  height: oneOfType([number, string]).isRequired,
   /** The width of the image. */
-  width: oneOfType(number, string),
+  width: oneOfType([number, string]),
   /** The radius of the image border. */
-  rounded: oneOfType(number, string)
+  rounded: oneOfType([number, string])
 }
 
 /* @component */

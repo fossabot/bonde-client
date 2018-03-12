@@ -21,10 +21,10 @@ export const borderSpacing = (
 const { oneOfType, number, string } = PropTypes
 
 export const borderSpacingPropTypes = PropTypes.shape({
-  top: oneOfType(number, string),
-  right: oneOfType(number, string),
-  bottom: oneOfType(number, string),
-  left: oneOfType(number, string),
-  x: oneOfType(number, string),
-  y: oneOfType(number, string)
+  top: oneOfType([number, string]),
+  right: oneOfType([number, string]),
+  bottom: oneOfType([number, string]),
+  left: oneOfType([number, string]),
+  x: oneOfType([number, string]),
+  y: oneOfType([number, string])
 })
