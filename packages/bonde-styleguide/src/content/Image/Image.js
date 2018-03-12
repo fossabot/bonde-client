@@ -15,17 +15,17 @@ const Image = styled.div`{
   ${props => props.rounded && `border-radius: ${px(props.rounded)};`}
 }`
 
-const { string, number } = PropTypes
+const { oneOfType, string, number } = PropTypes
 
 Image.propTypes = {
   /** The URL of the image. */
   src: string.isRequired,
   /** The height of the image. */
-  height: number.isRequired,
+  height: oneOfType(number, string).isRequired,
   /** The width of the image. */
-  width: number,
+  width: oneOfType(number, string),
   /** The radius of the image border. */
-  rounded: number
+  rounded: oneOfType(number, string)
 }
 
 /* @component */
