@@ -7,5 +7,6 @@ export default {
   'scenes.sign.registerForm.placeholder.lastName': 'Your last name',
   'scenes.sign.registerForm.placeholder.email': 'example@email.com',
   'scenes.sign.registerForm.placeholder.password': 'Your password',
+  'scenes.sign.registerForm.validation.required': 'Required',
   'scenes.sign.registerForm.submit': 'Confirm'
 }

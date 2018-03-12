@@ -1,13 +1,37 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ControlLabel } from 'bonde-styleguide'
+import { ControlLabel, Flexbox } from 'bonde-styleguide'
 
-const FormField = ({ input, meta, label, renderField: InputComponent, ...extraInputProps }) => (
-  <React.Fragment>
-    {label && <ControlLabel>{label}</ControlLabel>}
-    <InputComponent {...input} {...extraInputProps} />
-  </React.Fragment>
-)
+const FormField = ({
+  input,
+  label,
+  meta: { touched, error, warning },
+  renderField: InputComponent,
+  ...extraInputProps
+}) => {
+  const invalid = touched && (error || warning)
+
+  return (
+    <React.Fragment>
+      {label && (
+        <ControlLabel>
+          <Flexbox horizontal>
+            {label}
+            {touched && (
+              error && <span>{error}</span> ||
+              warning && <span>{warning}</span>
+            )}
+          </Flexbox>
+        </ControlLabel>
+      )}
+      <InputComponent
+        invalid={invalid}
+        {...input}
+        {...extraInputProps}
+      />
+    </React.Fragment>
+  )
+}
 
 FormField.propTypes = {
   label: PropTypes.string,

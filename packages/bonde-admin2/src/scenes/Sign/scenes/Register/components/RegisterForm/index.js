@@ -10,13 +10,17 @@ import {
 import FormField from 'components/FormField'
 import i18n from 'services/i18n'
 
+const required = (value, allValues, props) => (value ? undefined : props.intl.formatMessage({
+  id: 'scenes.sign.registerForm.validation.required',
+  defaultMessage: 'Obrigatório'
+}))
 
 const RegisterForm = ({ handleSubmit, intl }) => (
   <form onSubmit={handleSubmit}>
     <Grid>
       <Cell size={[6]}>
         <Field
-          name='firstName'  
+          name='firstName'
           type='text'
           label={intl.formatMessage({
             id: 'scenes.sign.registerForm.label.name',
@@ -28,11 +32,12 @@ const RegisterForm = ({ handleSubmit, intl }) => (
           })}
           component={FormField}
           renderField={Input}
+          validate={[required]}
         />
       </Cell>
       <Cell size={[6]}>
         <Field
-          name='lastName'  
+          name='lastName'
           type='text'
           label={intl.formatMessage({
             id: 'scenes.sign.registerForm.label.lastName',
@@ -44,11 +49,12 @@ const RegisterForm = ({ handleSubmit, intl }) => (
           })}
           component={FormField}
           renderField={Input}
+          validate={[required]}
         />
       </Cell>
       <Cell size={[12]}>
         <Field
-          name='email'  
+          name='email'
           type='text'
           label={intl.formatMessage({
             id: 'scenes.sign.registerForm.label.email',
@@ -64,7 +70,7 @@ const RegisterForm = ({ handleSubmit, intl }) => (
       </Cell>
       <Cell size={[12]}>
         <Field
-          name='password' 
+          name='password'
           type='password'
           label={intl.formatMessage({
             id: 'scenes.sign.registerForm.label.password',
@@ -77,7 +83,7 @@ const RegisterForm = ({ handleSubmit, intl }) => (
           component={FormField}
           renderField={Input}
         />
-      </Cell> 
+      </Cell>
     </Grid>
     <Flexbox padding={{ top: 43 }} alignItems='end'>
       <Button type='submit'>
