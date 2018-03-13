@@ -20,7 +20,7 @@ const RegisterForm = ({ handleSubmit, intl }) => (
     <Grid>
       <Cell size={[6]}>
         <Field
-          name='firstName'
+          name='first_name'
           type='text'
           label={intl.formatMessage({
             id: 'scenes.sign.registerForm.label.name',
@@ -37,7 +37,7 @@ const RegisterForm = ({ handleSubmit, intl }) => (
       </Cell>
       <Cell size={[6]}>
         <Field
-          name='lastName'
+          name='last_name'
           type='text'
           label={intl.formatMessage({
             id: 'scenes.sign.registerForm.label.lastName',
