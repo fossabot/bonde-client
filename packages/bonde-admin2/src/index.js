@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+// Router
+import { BrowserRouter as Router } from 'react-router-dom'
 // i18n
 import { addLocaleData } from 'react-intl'
 import en from 'react-intl/locale-data/en'
@@ -12,7 +14,7 @@ import store from './services/store'
 import { ApolloProvider } from 'react-apollo'
 import apolloClient from './services/apolloClient'
 // Run App
-import App from './scenes/Sign/scenes/Register'
+import RouteScenesApp from './scenes/routes'
 import registerServiceWorker from './registerServiceWorker'
 
 addLocaleData([...en, ...es, ...pt])
@@ -21,7 +23,9 @@ ReactDOM.render((
   <Provider store={store}>
     <ApolloProvider client={apolloClient}>
       {/* Router */}
-      <App />
+      <Router>
+        <RouteScenesApp />
+      </Router>
     </ApolloProvider> 
   </Provider>
 ), document.getElementById('root'))
