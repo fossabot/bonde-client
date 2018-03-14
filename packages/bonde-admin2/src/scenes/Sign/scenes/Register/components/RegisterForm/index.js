@@ -9,6 +9,8 @@ import {
 } from 'bonde-styleguide'
 import FormField from 'components/FormField'
 import i18n from 'services/i18n'
+import FormWithGraphQL from 'components/FormWithGraphQL'
+import register from './register.graphql'
 
 const required = (value, allValues, props) => (value ? undefined : props.intl.formatMessage({
   id: 'scenes.sign.registerForm.validation.required',
@@ -96,6 +98,17 @@ const RegisterForm = ({ handleSubmit, intl }) => (
   </form>
 )
 
-export default i18n({ messages: require('./locale').default })(reduxForm({
-  form: 'registerForm'
-})(RegisterForm))
+export default FormWithGraphQL({
+  mutation: register,
+  variables: (values) => ({
+    user: {
+      data: JSON.stringify(values)
+    }
+  })
+})(
+  i18n({ messages: require('./locale').default })(
+    reduxForm({
+      form: 'registerForm'
+    })(RegisterForm)
+  )
+)
