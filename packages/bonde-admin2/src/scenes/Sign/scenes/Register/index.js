@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text } from 'bonde-styleguide'
+import { AuthAPI, RedirectHOC } from 'services/auth'
 import HalfPage from '../../components/HalfPage'
 import RegisterForm from './components/RegisterForm'
 
@@ -15,7 +16,11 @@ const RegisterPage = (props) => (
     </Text>
     <RegisterForm
       onSuccess={({ data }) => {
-        console.log('got data', data)
+        AuthAPI
+          .authenticate(data.register.jwtToken)
+          .then(() => {
+            props.redirectTo('/')
+          })
       }}
       onFail={(error) => {
         console.log('there was an error sending the query', error)
@@ -24,4 +29,4 @@ const RegisterPage = (props) => (
   </HalfPage>
 )
 
-export default RegisterPage
+export default RedirectHOC(RegisterPage)

@@ -9,10 +9,10 @@ import es from 'react-intl/locale-data/es'
 import pt from 'react-intl/locale-data/pt'
 // Redux
 import { Provider } from 'react-redux'
-import store from './services/store'
+import store from 'services/store'
 // GraphQL
 import { ApolloProvider } from 'react-apollo'
-import apolloClient from './services/apolloClient'
+import apolloClient from 'services/apolloClient'
 // Run App
 import RouteScenesApp from './scenes/routes'
 import registerServiceWorker from './registerServiceWorker'
