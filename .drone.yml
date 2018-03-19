@@ -14,7 +14,7 @@ pipeline:
   build-staging:
     image: node:alpine
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
       - API_URL=https://api.staging.bonde.org
       - BOT_URL=https://beta.staging.bonde.org
       - GRAPHQL_URL=https://data.staging.bonde.org/graphql
