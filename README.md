@@ -51,9 +51,13 @@
 </p>
 
 
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnossas%2Fbonde-client.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnossas%2Fbonde-client?ref=badge_large)
+
 ##
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/nossas/bonde-client.svg)](https://greenkeeper.io/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnossas%2Fbonde-client.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnossas%2Fbonde-client?ref=badge_shield)
 
 ## Recommended Reading
 
